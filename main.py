@@ -16,7 +16,7 @@ pipe2X = 1000.0
 pipe2Y = 0.0
 pusheenX = 50.0
 pusheenY = 350.0
-#Main game
+# Main game
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
