@@ -15,8 +15,9 @@ while True:
             sys.exit()
     window.blit(background, (0, 0))
     keys = pygame.key.get_pressed()
+    pusheenY += 2
     if keys[pygame.K_SPACE]:
-        pusheenY -= 2
+        pusheenY -= 7
     window.blit(pusheen, (pusheenX, pusheenY))
 
     pygame.display.flip()
