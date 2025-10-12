@@ -30,6 +30,12 @@ while True:
         if pipe2X <= 0:
             pipeX = 1000.0
         pipe2X = 1000.0
+    if pusheenY <= 0:
+        print("Sleepy Time!")
+        sys.exit()
+    if pusheenY >= 800:
+        print("Sleepy Time!")
+        sys.exit()
     keys = pygame.key.get_pressed()
     pusheenY += 4
     if keys[pygame.K_SPACE]:
