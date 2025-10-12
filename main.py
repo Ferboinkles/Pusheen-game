@@ -26,15 +26,13 @@ while True:
     window.blit(pipe2, (pipe2X, pipe2Y))
     pipeX -= 3
     pipe2X -= 3
-    if pipeX <= 0:
-        if pipe2X <= 0:
+    if pipeX <= -100:
+        if pipe2X <= -100:
             pipeX = 1000.0
         pipe2X = 1000.0
     if pusheenY <= 0:
-        print("Sleepy Time!")
         sys.exit()
     if pusheenY >= 800:
-        print("Sleepy Time!")
         sys.exit()
     keys = pygame.key.get_pressed()
     pusheenY += 4
