@@ -26,6 +26,10 @@ while True:
     window.blit(pipe2, (pipe2X, pipe2Y))
     pipeX -= 3
     pipe2X -= 3
+    if pipeX <= 0:
+        if pipe2X <= 0:
+            pipeX = 1000.0
+        pipe2X = 1000.0
     keys = pygame.key.get_pressed()
     pusheenY += 4
     if keys[pygame.K_SPACE]:
