@@ -2,6 +2,8 @@ import sys
 
 import pygame
 
+# Sound
+# pygame.mixer.init()
 # Variabllllllllllles! Awwwwwwwww yeah!
 pygame.init()
 window = pygame.display.set_mode((1000, 800))
@@ -18,6 +20,7 @@ pipe2Rect = pipe2.get_rect()
 pipe3Rect = pipe2.get_rect()
 pipe4Rect = pipe2.get_rect()
 pusheenRect = pusheen.get_rect()
+font = pygame.font.SysFont("Press Start 2P", 80)
 pipeX = 1000.0
 pipeY = 540
 pipe2X = 1000.0
@@ -39,21 +42,22 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
+    window.blit(background, (0, 0))
     if pygame.Rect.colliderect(pipeRect, pusheenRect) or pygame.Rect.colliderect(pipe2Rect,
                                                                                  pusheenRect) or pygame.Rect.colliderect(
             pipe3Rect, pusheenRect) or pygame.Rect.colliderect(pipe4Rect, pusheenRect):
         sys.exit()
     if pipeX == 100:
-        if pipe3X == 100:
-            score = score + 1
         score = score + 1
-        print(score)
+    if pipe4X == 100:
+        score = score + 1
+    scoreText = font.render(str(score), 1, "blue")
+    window.blit(scoreText, scoreText.get_rect(centerx=100) )
     pipeRect.update(pipeX, pipeY, 86, 300)
     pipe2Rect.update(pipe2X, pipe2Y, 86, 300)
     pipe3Rect.update(pipe3X, pipe3Y, 86, 300)
     pipe4Rect.update(pipe4X, pipe4Y, 86, 300)
     pusheenRect.update(pusheenX, pusheenY, 200, 100)
-    window.blit(background, (0, 0))
     window.blit(pipe, (pipeX, pipeY))
     window.blit(pipe2, (pipe2X, pipe2Y))
     window.blit(pipe3, (pipe3X, pipe3Y))
