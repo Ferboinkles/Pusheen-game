@@ -3,7 +3,9 @@ import time
 import pygame
 
 # Sound
-# pygame.mixer.init()
+pygame.mixer.init()
+pygame.mixer.music.load("background.mp3")
+pygame.mixer.music.play(-1)
 # Variabllllllllllles! Awwwwwwwww yeah!
 pygame.init()
 window = pygame.display.set_mode((1000, 800))
@@ -51,7 +53,7 @@ while True:
         window.blit(gameOverText, (200, 300))
         window.blit(gameOverText2, (200, 400))
         pygame.display.update()
-        time.sleep(5)
+        time.sleep(4)
         pygame.quit()
 
     if pipeX == 100:
