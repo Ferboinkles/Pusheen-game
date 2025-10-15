@@ -1,4 +1,4 @@
-import sys
+import time
 
 import pygame
 
@@ -20,7 +20,7 @@ pipe2Rect = pipe2.get_rect()
 pipe3Rect = pipe2.get_rect()
 pipe4Rect = pipe2.get_rect()
 pusheenRect = pusheen.get_rect()
-font = pygame.font.SysFont("Press Start 2P", 80)
+font = pygame.font.SysFont("javanesetext", 80)
 pipeX = 1000.0
 pipeY = 540
 pipe2X = 1000.0
@@ -41,12 +41,19 @@ pusheenRect.update(pusheenX, pusheenY, 200, 100)
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            sys.exit()
+            pygame.quit()
     window.blit(background, (0, 0))
     if pygame.Rect.colliderect(pipeRect, pusheenRect) or pygame.Rect.colliderect(pipe2Rect,
                                                                                  pusheenRect) or pygame.Rect.colliderect(
             pipe3Rect, pusheenRect) or pygame.Rect.colliderect(pipe4Rect, pusheenRect):
-        sys.exit()
+        gameOverText = font.render("Pusheen fell asleep!", 1, (39, 2, 222))
+        gameOverText2 = font.render(f"You got a score of {str(score)}", 1, (39, 2, 222))
+        window.blit(gameOverText, (200, 300))
+        window.blit(gameOverText2, (200, 400))
+        pygame.display.update()
+        time.sleep(5)
+        pygame.quit()
+
     if pipeX == 100:
         score = score + 1
     if pipe4X == 100:
@@ -75,9 +82,9 @@ while True:
             pipe2X = 1000.0
         pipeX = 1000.0
     if pusheenY <= 0:
-        sys.exit()
+        pygame.quit()
     if pusheenY >= 800:
-        sys.exit()
+        pygame.quit()
     keys = pygame.key.get_pressed()
     pusheenY += 3.5
     if keys[pygame.K_SPACE]:
