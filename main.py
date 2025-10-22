@@ -3,18 +3,16 @@ import time
 
 import pygame
 
-# FPS
-clock = pygame.time.Clock()
-clock.tick(60)
 # Sound
-# pygame.mixer.init()
-# pygame.mixer.music.load("background.mp3")
-# pygame.mixer.music.play(-1)
+pygame.mixer.init()
+pygame.mixer.music.load("background.mp3")
+pygame.mixer.music.play(-1)
 # Variabllllllllllles! Awwwwwwwww yeah!
 pygame.init()
 window = pygame.display.set_mode((1000, 800))
 pygame.display.set_caption("Pusheen!")
 score = 0
+clock = pygame.time.Clock()
 background = pygame.transform.scale(pygame.image.load("background.png"), (1000, 800))
 pusheen = pygame.transform.scale(pygame.image.load("pusheen.png"), (150, 100))
 pipe = pygame.transform.scale(pygame.image.load("pipe.png"), (150, 700))
@@ -45,6 +43,7 @@ pipe4Rect.update(pipe4X, pipe4Y, 150, 700)
 pusheenRect.update(pusheenX, pusheenY, 150, 100)
 # Main game
 while True:
+    clock.tick(60)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
