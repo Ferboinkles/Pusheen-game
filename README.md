@@ -19,7 +19,7 @@ Download all of the files from https://ferboinkles.itch.io/flappy-pusheen
 
 2. Find main.py
 3. In terminal, cd into the directory where you downloaded your files
-4. Run `pip install pygame`
+4. Run `pip install pygame` (if this does not work then run `pip install pygame --break-system-packages`)
 5. Type in `python3 main.py` 
 
 

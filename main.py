@@ -93,7 +93,7 @@ while True:
 
     keys = pygame.key.get_pressed()
     pusheenY += 4.5
-    if keys[pygame.K_SPACE]:
+    if keys[pygame.K_SPACE] or keys[pygame.K_UP] or keys[pygame.K_w]:
         pusheenY -= 9
     window.blit(pusheen, (pusheenX, pusheenY))
     if keys[pygame.K_b]:
