@@ -8,7 +8,7 @@ iniconfig==2.3.0
 numpy==2.3.4
 opencv-python==4.10.0.84
 packaging==25.0
-peewee==3.18.2
+peewee==3.18.3
 pluggy==1.6.0
 pygame==2.6.1
 Pygments==2.19.2
